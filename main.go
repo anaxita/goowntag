@@ -14,7 +14,7 @@ type User struct {
 
 func main() {
 	user := User{
-		ID:   0,
+		ID:   25,
 		Name: "",
 	}
 
@@ -22,10 +22,7 @@ func main() {
 }
 
 func validate(v interface{}, fields ...string) error {
-	var (
-		rv = reflect.ValueOf(v)
-		t  reflect.Type
-	)
+	rv := reflect.ValueOf(v)
 
 	if rv.Kind() == reflect.Ptr {
 		rv = rv.Elem()
@@ -35,7 +32,7 @@ func validate(v interface{}, fields ...string) error {
 		return errors.New("v must be a struct!")
 	}
 
-	t = rv.Type()
+	t := rv.Type()
 
 	var b strings.Builder
 	b.WriteString("VALIDATION ERROR: ")
