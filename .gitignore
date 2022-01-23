@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/build
+/vendor
+/node_modules
+
+*sql
+*.env
+*.log
+*.exe
